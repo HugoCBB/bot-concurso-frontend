@@ -8,9 +8,6 @@ export async function GET(req: NextRequest) {
   try {
     const res = await fetch(
       `${process.env.SERVER_URL}/api/contests/?page=${page}&size=${size}`,
-      {
-        next: { revalidate: 21600 },
-      }
     );
 
     if (!res.ok) {
